@@ -32,7 +32,7 @@
         </nav>
         <header class="masthead text-center">
             <div class="container d-flex align-items-center flex-column">
-                <img class="masthead-avatar mb-5" src="assets/img/jorchava-avatar.png" alt="Jorge Luis Chavarría Chaves, Jorchava pixel avatar" />
+                <img class="masthead-avatar mb-5" src="assets/img/jorchava-avatar.webp" alt="Jorge Luis Chavarría Chaves, Jorchava pixel avatar" />
                 <h1 class="masthead-heading text-uppercase mb-0">Web Game Developer</h1>
                 <div class="divider-custom">
                     <div class="divider-custom-line bg-primary"></div>
@@ -59,7 +59,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/contrast.png" alt="ContrAst: The Color Wars NES-Inspired Accessibility Color Checker web tool, full page screenshot" />
+                            <img class="img-fluid" src="assets/img/portfolio/contrast.webp" alt="ContrAst: The Color Wars NES-Inspired Accessibility Color Checker web tool, full page screenshot" />
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5">
@@ -67,7 +67,15 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/pixi-js.png" alt="Pixi JS version 8 logo" />
+                            <img class="img-fluid" src="assets/img/portfolio/pixi-js-com-batants.webp" alt="Pixi JS version 8 logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/devJobs.webp" alt="screenshot of a jobsearch in tech landing page called devjobs" />
                         </div>
                     </div>
                 </div>
@@ -146,16 +154,15 @@
             </div>
         </footer>
         <div class="copyright py-4 text-center text-white">
-            <div class="container">
-                <small>Copyright &copy; jorchava</small>
-                <span id="year">2025</span>
-            </div>
+            <div class="container"><small>&copy; 2025 jorchava</small></div>
         </div>
         <!-- Portfolio Modal 1-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-header border-0">
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"><span class="sr-only">Close Contrast color contrast checker Web tool modal</span></button>
+                    </div>
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -169,7 +176,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/contrast.png" alt="ContrAst: The Color Wars NES-Inspired Accessibility Color Checker web tool, full page screenshot" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/contrast.webp" alt="ContrAst: The Color Wars NES-Inspired Accessibility Color Checker web tool, full page screenshot" />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">
                                         ContrAst: The Color Wars is a NES-Inspired Accessibility Color Contrast Checker Web tool built for UX and UI designers, developers, and anyone who wants to ensure their digital content is accessible to all users. It allows you to check the contrast ratio of text and background colors, ensuring compliance with WCAG standards.
@@ -177,7 +184,9 @@
                                     </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
+                                        Close
+                                        <span class="sr-only">Contrast color contrast checker Web tool modal</span>
+                                        Window
                                     </button>
                                 </div>
                             </div>
@@ -190,7 +199,9 @@
         <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-header border-0">
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"><span class="sr-only">Close beat-em-up PixiJS v8 modal</span></button>
+                    </div>
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
@@ -204,7 +215,7 @@
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pixi-js.png" alt="Pixi JS version 8 logo" />
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pixi-js-com-batants.webp" alt="Pixi JS version 8 logo" />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">
                                         A simple 2D early days of beat-em-up games like Yie-Ar KungFu built with
@@ -214,7 +225,49 @@
                                     </p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
+                                        Close
+                                        <span class="sr-only">beat-em-up PixiJS v8 modal</span>
+                                        Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <button class="btn-close" type="button" data-bs-dismiss="modal"><span class="sr-only">Close DevJobs modal</span></button>
+                    </div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">DevJobs</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-gamepad"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/devJobs.webp" alt="Pixi JS version 8 logo" />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">A Javascript Full Stack Website project for InfoJob's JSCamp free bootcamp, guided by Midudev. Techs involved: HTML, CSS, JavaScript, TypeScript, Node.js, SQL, CI/CD y Docker.</p>
+                                    <p class="mb-4">
+                                        The site is a job search page for the technology community
+                                        <a href="https://github.com/Jorchava/devjobs-computing-machine" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                                    </p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close
+                                        <span class="sr-only">DevJobs modal</span>
+                                        Window
                                     </button>
                                 </div>
                             </div>

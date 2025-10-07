@@ -10834,12 +10834,12 @@ html {
   padding: 6rem 0;
 }
 .page-section .page-section-heading {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   line-height: 2rem;
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
-    font-size: 3rem;
+    font-size: 3em;
     line-height: 2.5rem;
   }
 }
@@ -10871,7 +10871,7 @@ abbr {
 }
 .divider-custom .divider-custom-icon {
   color: #a5a2a2;
-  font-size: 2rem;
+  font-size: 2em;
 }
 .divider-custom.divider-light .divider-custom-line {
   background-color: #ffffff;
@@ -10882,7 +10882,7 @@ abbr {
 
 .btn-xl {
   padding: 1rem 1.75rem;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 .btn-social {
@@ -10890,7 +10890,7 @@ abbr {
   display: inline-flex;
   width: 3.25rem;
   height: 3.25rem;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   justify-content: center;
   align-items: center;
 }
@@ -10965,11 +10965,10 @@ abbr {
   background-color: #e5e5e5;
 }
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 2.75em;
 }
 .masthead .masthead-subheading {
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 .masthead .masthead-avatar {
   width: 20rem;
@@ -10981,11 +10980,10 @@ abbr {
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
-    line-height: 3.5rem;
+    font-size: 4em;
   }
   .masthead .masthead-subheading {
-    font-size: 1.5rem;
+    font-size: 1.5em;
   }
 }
 .portfolio {
@@ -11011,21 +11009,19 @@ abbr {
   opacity: 1;
 }
 .portfolio-item-caption-content {
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 .portfolio-modal .btn-close {
   color: #0d0c0c;
-  font-size: 2rem;
+  font-size: 2em;
   padding: 1rem;
 }
 .portfolio-modal-title {
-  font-size: 2.25rem;
-  line-height: 2rem;
+  font-size: 2.25em;
 }
 @media (min-width: 992px) {
   .portfolio-modal-title {
-    font-size: 3rem;
-    line-height: 2.5rem;
+    font-size: 3em;
   }
 }
 

@@ -1,0 +1,17 @@
+@use '../abstracts/breakpoints' as *;
+
+.section {
+  padding-block: 6rem;
+}
+
+@include respond(md) {
+  .section {
+    padding-block: 8rem;
+  }
+}
+
+@include respond(lg) {
+  .section {
+    padding-block: 10rem;
+  }
+}

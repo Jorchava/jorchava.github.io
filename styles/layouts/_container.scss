@@ -1,0 +1,16 @@
+.container {
+  width: min(100% - 2rem, var(--container-width));
+  margin-inline: auto;
+  &--default {
+    width: min(100% - 2rem, var(--container-width));
+  }
+  &--narrow {
+    width: min(100% - 2rem, (var(--container-width) - 300px));
+  }
+  &--wide {
+    width: min(100% - 2rem, (var(--container-width) + 200px));
+  }
+  &--full {
+    width: 100%;
+  }
+}

@@ -1,5 +1,10 @@
 <template>
   <main>
-    <h1>Jorchava Portfolio</h1>
+    <HeroSection />
+    <AboutSection />
+    <ProjectsSection />
+    <SkillsSection />
+    <ResumeSection />
+    <ContactSection />
   </main>
 </template>

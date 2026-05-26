@@ -22,8 +22,10 @@ The goal is to maintain:
 
 ## Styling
 
-- TailwindCSS
 - SCSS
+- CSS Custom Properties
+- Design Tokens
+- Responsive Sass Mixins
 
 ## Animation
 
@@ -70,7 +72,6 @@ If the game systems fail or are disabled, the portfolio itself must remain fully
 
 ```txt
 /
-├── app/
 ├── assets/
 ├── components/
 ├── composables/
@@ -135,6 +136,9 @@ Examples:
 
 - useProjects.ts
 - useAge.ts
+- useTheme.ts
+- useProjects.ts
+- useGsap.ts
 
 ---
 
@@ -172,6 +176,8 @@ Contains:
 
 The game layer must remain independent from the primary app structure.
 
+The application should remain functional without the game layer enabled.
+
 ---
 
 ## /server
@@ -194,24 +200,161 @@ Global SCSS architecture.
 
 Responsibilities:
 
-- variables
-- tokens
+- design tokens
 - themes
 - typography
+- mixins
+- responsive systems
+- utility classes
 - animation systems
+- layout systems
 
-Tailwind handles:
+---
 
-- layout
+### Structure
+
+```txt
+styles/
+├── abstracts/
+├── base/
+├── components/
+├── layouts/
+├── themes/
+└── main.scss
+```
+
+---
+
+# Styling Philosophy
+
+This project intentionally avoids utility-first CSS frameworks.
+
+Instead, styling is built around:
+
+- SCSS architecture
+- reusable mixins
+- responsive breakpoint systems
+- CSS custom properties
+- token-driven theming
+- reusable utility classes
+- scalable component styling
+
+## CSS Custom Properties
+
+CSS variables act as the primary runtime styling system.
+
+Examples:
+
+- colors
 - spacing
-- responsive utilities
+- typography
+- radii
+- shadows
+- transitions
 
-SCSS handles:
+This enables:
 
-- identity
-- custom styling systems
-- retro polish
-- advanced visual systems
+- scalable theming
+- runtime theme switching
+- visual consistency
+- easier maintenance
+
+---
+
+# Theme System
+
+Themes are powered by CSS custom properties.
+
+Examples:
+
+- dark mode
+- light mode
+- future retro themes
+
+Theme switching occurs through:
+
+```html
+data-theme="dark"
+```
+
+or:
+
+```html
+data-theme="light"
+```
+
+---
+
+# Responsive Philosophy
+
+Mobile-first always.
+
+Responsive behavior is handled through reusable Sass breakpoint mixins.
+
+Example goals:
+
+- touch-friendly interfaces
+- scalable layouts
+- consistent spacing systems
+- reduced responsive duplication
+
+Primary targets:
+
+- mobile devices
+- laptops
+- desktop monitors
+
+---
+
+# Animation Philosophy
+
+Animations should enhance clarity and atmosphere.
+
+Avoid animation for novelty alone.
+
+## GSAP Responsibilities
+
+Used for:
+
+- hero reveals
+- section transitions
+- scroll choreography
+- cinematic polish
+- timeline orchestration
+
+Avoid:
+
+- animating every interaction
+- excessive motion overload
+- unnecessary runtime complexity
+
+---
+
+# PixiJS Philosophy
+
+PixiJS is used only where canvas rendering adds meaningful value.
+
+Examples:
+
+- particle systems
+- retro environments
+- shader effects
+- interactive visual scenes
+- game-like interactions
+
+Avoid:
+
+- rendering the entire portfolio in canvas
+- replacing semantic UI unnecessarily
+- coupling app logic tightly to Pixi systems
+
+Pixi components should remain isolated.
+
+Suggested structure:
+
+```txt
+components/game/
+```
 
 ---
 
@@ -247,28 +390,6 @@ This enables:
 
 ---
 
-# Styling Philosophy
-
-## TailwindCSS
-
-Used for:
-
-- layout
-- spacing
-- responsiveness
-- utility composition
-
-## SCSS
-
-Used for:
-
-- custom systems
-- retro UI identity
-- animations
-- component polish
-
----
-
 # Naming Conventions
 
 ## Components
@@ -287,6 +408,7 @@ camelCase prefixed with `use`
 Examples:
 
 - useProjects.ts
+- useTheme.ts
 
 ## Utilities
 
@@ -303,6 +425,21 @@ kebab-case
 Examples:
 
 - /projects/contrast-the-color-wars
+
+---
+
+# Accessibility Philosophy
+
+Accessibility is treated as part of frontend engineering quality.
+
+Goals:
+
+- semantic HTML
+- keyboard support
+- reduced motion support
+- strong contrast
+- readable typography
+- mobile usability
 
 ---
 

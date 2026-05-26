@@ -1,6 +1,6 @@
 # Jorchava Portfolio
 
-Modern frontend and web game developer portfolio built with Nuxt 4, Vue 3, TypeScript, TailwindCSS, SCSS, and PixiJS.
+Modern frontend and web game developer portfolio built with Nuxt 4, Vue 3, TypeScript, SCSS, GSAP and PixiJS.
 
 This project is designed as a fast, lightweight, mobile-first portfolio focused on:
 
@@ -28,8 +28,10 @@ The portfolio itself acts as both:
 
 ## Styling
 
-- TailwindCSS
 - SCSS
+- CSS Custom Properties (Design Tokens)
+- Responsive Sass Mixins
+- Theme System
 
 ## Animation
 
@@ -54,6 +56,8 @@ The portfolio itself acts as both:
 - Scalable project showcase system
 - Isolated game systems
 - Production-ready engineering practices
+- Maintainable styling architecture
+- Accessible frontend engineering
 
 ---
 
@@ -78,6 +82,8 @@ The portfolio itself acts as both:
 - Character selection
 - Mailbox interaction system
 - Secure message submission API
+- Theme support
+- Reusable design system
 
 ## Phase 3
 
@@ -85,6 +91,7 @@ The portfolio itself acts as both:
 - Expanded interactions
 - Optional realtime presence
 - Analytics and dashboard systems
+- Advanced visual effects
 
 ---
 
@@ -98,10 +105,36 @@ This project follows several core engineering principles:
 - Optimize for maintainability
 - Build scalable foundations early
 - Ship polished features incrementally
+- Keep visual systems reusable
+- Treat performance as a feature
 
 The PixiJS game systems are intentionally isolated from the main application architecture.
 
 The portfolio must remain fully functional even if the game layer is disabled.
+
+---
+
+# Styling Philosophy
+
+This project intentionally avoids utility-first CSS frameworks.
+
+Instead, styling is built around:
+
+- SCSS architecture
+- reusable mixins
+- responsive breakpoint systems
+- CSS custom properties
+- token-driven theming
+- reusable utility classes
+- scalable component styling
+
+This provides:
+
+- stronger design consistency
+- easier long-term maintenance
+- cleaner component ownership
+- framework independence
+- more flexible visual systems
 
 ---
 
@@ -145,6 +178,12 @@ pnpm dev
 pnpm build
 ```
 
+## Preview production build
+
+```bash
+pnpm preview
+```
+
 ---
 
 # Deployment
@@ -168,6 +207,7 @@ GitHub is used for:
 - Mobile-first optimization
 - Strong Lighthouse scores
 - Accessibility-first approach
+- Minimal runtime overhead
 
 ---
 
@@ -178,12 +218,25 @@ GitHub is used for:
 - Reduced motion support
 - WCAG-aware contrast handling
 - Mobile usability focus
+- Readable typography systems
 
 ---
 
 # Status
 
 Currently in active development.
+
+---
+
+Current foundation work includes:
+
+- Nuxt 4 setup
+- SCSS architecture
+- token-based theme system
+- responsive layout system
+- reusable utility classes
+- GSAP integration preparation
+- PixiJS integration planning
 
 ---
 

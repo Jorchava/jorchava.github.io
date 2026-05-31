@@ -18,8 +18,10 @@
   transition-timing-function: ease;
 }
 
-@mixin hover-lift($distance: -2px) {
-  transition: transform var(--transition-default);
+@mixin hover-lift($distance: -4px) {
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
 
   &:hover {
     transform: translateY($distance);

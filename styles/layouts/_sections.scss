@@ -1,7 +1,29 @@
 @use '../abstracts/breakpoints' as *;
 
 .section {
-  padding-block: 6rem;
+  position: relative;
+  padding-block: clamp(5rem, 10vw, 8rem);
+
+  &-label {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: min(100%, 1200px);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-separator),
+      transparent
+    );
+    transform: translateX(-50%);
+  }
 }
 
 @include respond(md) {

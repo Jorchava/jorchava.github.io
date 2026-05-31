@@ -1,15 +1,23 @@
 <script setup lang="ts">
 interface Props {
-  size?: 'default' | 'narrow' | 'wide' | 'full'
+  narrow?: boolean
+  full?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  size: 'default',
+withDefaults(defineProps<Props>(), {
+  narrow: false,
+  full: false,
 })
 </script>
 
 <template>
-  <div class="container" :class="`container--${props.size}`">
+  <div
+    class="container"
+    :class="{
+      'container--narrow': narrow,
+      'container--full': full,
+    }"
+  >
     <slot />
   </div>
 </template>

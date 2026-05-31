@@ -3,11 +3,11 @@ import { socials } from '~/data/socials/socials'
 </script>
 
 <template>
-  <section id="contact" class="section contact-section">
+  <section id="contact" class="section contact-section" tabindex="-1">
     <AppContainer>
       <div class="contact-section__content reveal">
         <div class="contact-section__intro">
-          <p class="contact-section__eyebrow pixel-font">CONTACT</p>
+          <p class="section-label pixel-font">CONTACT</p>
 
           <h2 class="contact-section__title">
             Let’s build interactive experiences together.
@@ -28,10 +28,11 @@ import { socials } from '~/data/socials/socials'
               class="contact-section__link flex"
               target="_blank"
               rel="noopener noreferrer"
+              :aria-label="`Open ${social.label} in a new tab`"
             >
               <span>{{ social.label }}</span>
 
-              <span class="contact-section__arrow">↗</span>
+              <span class="contact-section__arrow" aria-hidden="true">↗</span>
             </a>
           </div>
 
@@ -58,10 +59,6 @@ import { socials } from '~/data/socials/socials'
   &__intro {
     max-width: 720px;
   }
-  &__eyebrow {
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-  }
   &__title {
     margin-bottom: 2rem;
     font-size: clamp(3rem, 8vw, 6rem);
@@ -75,8 +72,13 @@ import { socials } from '~/data/socials/socials'
   }
   &__panel {
     padding: 2rem;
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-subtle);
     border-radius: var(--radius-lg);
+    background: linear-gradient(
+      180deg,
+      var(--color-surface-elevated),
+      var(--color-surface-elevated-less)
+    );
   }
   &__links {
     flex-direction: column;
@@ -89,14 +91,21 @@ import { socials } from '~/data/socials/socials'
     color: var(--color-text);
     text-decoration: none;
     font-size: clamp(1.25rem, 3vw, 2rem);
+    min-height: 88px;
     @include transition;
     &:hover {
       color: var(--color-primary);
     }
   }
+  &__link:hover &__arrow {
+    transform: translate(3px, -3px);
+  }
   &__arrow {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: var(--color-primary);
+    transition:
+      transform var(--transition-default),
+      color var(--transition-default);
   }
   &__resume {
     display: inline-flex;
@@ -116,7 +125,7 @@ import { socials } from '~/data/socials/socials'
     }
   }
 }
-@include respond(lg) {
+@include respond(xl) {
   .contact-section {
     &__content {
       grid-template-columns: 1.2fr 0.8fr;

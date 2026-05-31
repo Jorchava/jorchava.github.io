@@ -3,9 +3,9 @@ import { navigationItems } from '~/data/navigation/navigation'
 import { useActiveSection } from '~/composables/useActiveSection'
 
 const isMenuOpen = ref(false)
-
+const mobileMenuRef = ref<HTMLElement | null>(null)
+const menuToggleRef = ref<HTMLButtonElement | null>(null)
 const { activeSection } = useActiveSection()
-
 const MOBILE_BREAKPOINT = 768
 
 const toggleMenu = () => {
@@ -17,29 +17,57 @@ const closeMenu = () => {
 }
 
 const handleResize = () => {
-  if (window.innerWidth >= MOBILE_BREAKPOINT) {
-    closeMenu()
-  }
+  if (window.innerWidth >= MOBILE_BREAKPOINT) closeMenu()
 }
 
 const handleEscape = (event: KeyboardEvent) => {
-  if (event.key === 'Escape') {
-    closeMenu()
+  if (event.key === 'Escape') closeMenu()
+}
+
+const handleTabTrap = (event: KeyboardEvent) => {
+  if (!isMenuOpen.value || event.key !== 'Tab') return
+  const focusableElements = [
+    menuToggleRef.value,
+    ...Array.from(
+      mobileMenuRef.value?.querySelectorAll<HTMLElement>('a, button') ?? []
+    ),
+  ].filter(Boolean) as HTMLElement[]
+  if (!focusableElements?.length) return
+  const firstElement = focusableElements[0]
+  const lastElement = focusableElements[focusableElements.length - 1]
+  if (event.shiftKey && document.activeElement === firstElement) {
+    event.preventDefault()
+    lastElement.focus()
+  }
+  if (!event.shiftKey && document.activeElement === lastElement) {
+    event.preventDefault()
+    firstElement.focus()
   }
 }
 
-watch(isMenuOpen, (value) => {
+watch(isMenuOpen, async (value) => {
   document.documentElement.classList.toggle('menu-open', value)
+  if (value) {
+    window.addEventListener('keydown', handleEscape)
+    window.addEventListener('keydown', handleTabTrap)
+    await nextTick()
+    const firstLink = mobileMenuRef.value?.querySelector<HTMLElement>('a')
+    firstLink?.focus()
+  } else {
+    window.removeEventListener('keydown', handleEscape)
+    window.removeEventListener('keydown', handleTabTrap)
+    menuToggleRef.value?.focus()
+  }
 })
 
 onMounted(() => {
   window.addEventListener('resize', handleResize)
-  window.addEventListener('keydown', handleEscape)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
   window.removeEventListener('keydown', handleEscape)
+  window.removeEventListener('keydown', handleTabTrap)
   document.documentElement.classList.remove('menu-open')
 })
 </script>
@@ -50,7 +78,7 @@ onBeforeUnmount(() => {
       <div class="app-header__content flex">
         <a href="#hero" class="app-header__logo pixel-font"> JORCHAVA </a>
 
-        <nav class="app-header__desktop-nav">
+        <nav class="app-header__desktop-nav" aria-label="Primary navigation">
           <a
             v-for="item in navigationItems"
             :key="item.href"
@@ -65,44 +93,53 @@ onBeforeUnmount(() => {
           >
             {{ item.label }}
           </a>
+          <ThemeToggle />
         </nav>
 
         <button
           class="app-header__toggle"
           type="button"
           :aria-expanded="isMenuOpen"
-          aria-label="Toggle navigation menu"
+          aria-controls="mobile-navigation"
+          :aria-label="`${isMenuOpen ? 'Close' : 'Open'} navigation menu`"
+          aria-haspopup="menu"
           @click="toggleMenu"
+          ref="menuToggleRef"
         >
           <span></span>
           <span></span>
         </button>
+        <Transition name="menu">
+          <div v-if="isMenuOpen" class="mobile-menu flex" @click="closeMenu">
+            <nav
+              id="mobile-navigation"
+              class="mobile-menu__nav flex"
+              @click.stop
+              aria-label="Primary navigation"
+              ref="mobileMenuRef"
+              :aria-hidden="!isMenuOpen"
+            >
+              <a
+                v-for="item in navigationItems"
+                :key="item.href"
+                :href="item.href"
+                :class="[
+                  'mobile-menu__link',
+                  {
+                    'mobile-menu__link--active':
+                      activeSection === item.href.replace('#', ''),
+                  },
+                ]"
+                @click="closeMenu"
+              >
+                {{ item.label }}
+              </a>
+              <ThemeToggle />
+            </nav>
+          </div>
+        </Transition>
       </div>
     </AppContainer>
-
-    <Teleport to="body">
-      <Transition name="menu">
-        <div v-if="isMenuOpen" class="mobile-menu flex" @click="closeMenu">
-          <nav class="mobile-menu__nav flex" @click.stop>
-            <a
-              v-for="item in navigationItems"
-              :key="item.href"
-              :href="item.href"
-              :class="[
-                'mobile-menu__link',
-                {
-                  'mobile-menu__link--active':
-                    activeSection === item.href.replace('#', ''),
-                },
-              ]"
-              @click="closeMenu"
-            >
-              {{ item.label }}
-            </a>
-          </nav>
-        </div>
-      </Transition>
-    </Teleport>
   </header>
 </template>
 
@@ -112,8 +149,8 @@ onBeforeUnmount(() => {
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgb(255 255 255 / 0.06);
-  background: rgb(13 12 12 / 0.8);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-overlay);
   backdrop-filter: blur(16px);
   width: 100%;
   &__content {
@@ -140,6 +177,24 @@ onBeforeUnmount(() => {
     }
     &--active {
       color: var(--color-primary);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.35rem;
+      width: 100%;
+      height: 1px;
+      background: var(--color-primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--transition-default);
+    }
+
+    &:hover::after,
+    &--active::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
   &__toggle {
@@ -184,7 +239,7 @@ onBeforeUnmount(() => {
   align-items: flex-start;
   justify-content: center;
   padding-top: 6rem;
-  background: rgb(13 12 12 / 0.96);
+  background: var(--color-overlay-strong);
   backdrop-filter: blur(20px);
   min-height: calc(100dvh - 5rem);
   &__nav {

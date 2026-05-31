@@ -1,6 +1,9 @@
 :root {
   /*Palette - Accent*/
-  --red-500: #dd2020;
+  --red-500: #f83800;
+  --pink-500: #f85898;
+  --blue-500: #0078f8;
+  --yellow-500: #f8b800;
 
   /*Palette - Grays & Neutrals*/
   --dark: #0d0c0c;
@@ -17,9 +20,20 @@
   --color-text: var(--white);
   --color-text-muted: var(--gray-600);
   --color-primary: var(--red-500);
+  --color-secondary: var(--color-primary);
+  --color-terciary: var(--color-primary);
   --color-border: var(--gray-800);
 
   --shadow-soft: 0 4px 20px rgb(0 0 0 / 0.2);
+  --shadow-primary-glow: 0 0 20px rgb(248 56 0 / 0.35);
+  --shadow-logo-glow: 0 0 12px rgb(248 56 0 / 0.18);
+
+  --color-surface-elevated-less: rgb(255 255 255 / 0.01);
+  --color-surface-elevated: rgb(255 255 255 / 0.02);
+  --color-overlay: rgb(13 12 12 / 0.8);
+  --color-overlay-strong: rgb(13 12 12 / 0.96);
+  --color-border-subtle: rgb(255 255 255 / 0.06);
+  --color-separator: rgb(255 255 255 / 0.08);
 
   --font-primary: 'Mozilla Text', sans-serif;
   --font-pixel: 'Press Start 2P', cursive;
@@ -35,11 +49,14 @@
   --spacing-xl: 4rem;
   --spacing-xxl: 6rem;
 
-  --container-width: 1200px;
+  --container-width: min(1440px, calc(100vw - 4rem));
 
-  --content-max-width: 720px;
+  --content-max-width: 68ch;
 
-  --transition-default: 200ms ease;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --transition-duration: 300ms;
+  --transition-default: var(--transition-duration) var(--ease-out-expo);
 }
 
 [data-theme='light'] {
@@ -47,6 +64,19 @@
   --color-surface: var(--white);
   --color-text: var(--dark);
   --color-text-muted: var(--gray-600);
-  --color-primary: var(--red-500);
+  --color-primary: var(--blue-500);
+  --color-secondary: var(--pink-500);
+  --color-terciary: var(--yellow-500);
   --color-border: var(--gray-200);
+
+  --color-overlay: rgb(255 255 255 / 0.85);
+  --color-overlay-strong: rgb(255 255 255 / 0.96);
+
+  --color-border-subtle: rgb(0 0 0 / 0.08);
+  --color-separator: rgb(0 0 0 / 0.08);
+
+  --color-surface-elevated-less: rgb(0 0 0 / 0.01);
+  --color-surface-elevated: rgb(0 0 0 / 0.03);
+
+  --shadow-soft: 0 4px 20px rgb(0 0 0 / 0.08);
 }

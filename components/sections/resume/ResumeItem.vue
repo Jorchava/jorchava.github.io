@@ -70,7 +70,7 @@ defineProps<Props>()
     margin-top: 0.35rem;
     border-radius: 999px;
     background: var(--color-primary);
-    box-shadow: 0 0 20px rgb(221 32 32 / 0.35);
+    box-shadow: var(--shadow-primary-glow);
   }
   &__content {
     padding-bottom: 4rem;
@@ -102,12 +102,12 @@ defineProps<Props>()
     list-style: none;
   }
   &__technology {
-    padding: 0.5rem 0.875rem;
+    padding: 0.25rem 0.5rem;
     border: 1px solid var(--color-border);
     border-radius: 999px;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--color-text-muted);
-    background: rgb(255 255 255 / 0.02);
+    background: var(--color-surface-elevated);
   }
 }
 @include respond(md) {

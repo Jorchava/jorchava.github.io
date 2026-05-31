@@ -3,10 +3,10 @@ import { experience } from '~/data/experience/experience'
 </script>
 
 <template>
-  <section id="resume" class="section resume-section">
-    <AppContainer size="narrow">
+  <section id="resume" class="section resume-section" tabindex="-1">
+    <AppContainer narrow>
       <div class="resume-section__header">
-        <p class="resume-section__eyebrow pixel-font">RESUME</p>
+        <p class="section-label pixel-font">RESUME</p>
 
         <h2 class="resume-section__title">
           Experience built through engineering-focused frontend development.

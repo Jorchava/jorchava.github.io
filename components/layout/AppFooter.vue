@@ -28,6 +28,7 @@ const year = new Date().getFullYear()
 .app-footer {
   padding-block: 2rem;
   border-top: 1px solid var(--color-border);
+  opacity: 0.92;
   &__content {
     flex-direction: column;
     gap: 2rem;
@@ -38,6 +39,7 @@ const year = new Date().getFullYear()
   }
   &__logo {
     color: var(--color-text);
+    text-shadow: var(--shadow-logo-glow);
   }
   &__text,
   &__meta {

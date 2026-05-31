@@ -3,7 +3,7 @@ import { skills } from '~/data/skills/skills'
 </script>
 
 <template>
-  <section id="skills" class="section skills">
+  <section id="skills" class="section skills" tabindex="-1">
     <AppContainer>
       <div class="skills__content flex">
         <div class="skills__intro">
@@ -83,7 +83,7 @@ import { skills } from '~/data/skills/skills'
     border: 1px solid var(--color-border);
     border-radius: 999px;
     color: var(--color-text-muted);
-    background: rgb(255 255 255 / 0.02);
+    background: var(--color-surface-elevated);
   }
 }
 @include respond(md) {

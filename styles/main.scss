@@ -5,9 +5,11 @@
 @use './abstracts/mixins' as *;
 
 @use './base/reset';
+@use './base/fonts';
 @use './base/typography';
 @use './base/globals';
 @use './base/animations';
+@use './base/motion';
 
 @use './layouts/container';
 @use './layouts/sections';

@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxtjs/sitemap'],
 
   css: ['~/styles/main.scss'],
 
@@ -32,5 +32,8 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  sitemap: {
+    siteUrl: 'https://jorchava.github.io/',
   },
 })

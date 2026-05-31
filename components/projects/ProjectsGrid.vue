@@ -6,6 +6,11 @@ interface Props {
 }
 
 defineProps<Props>()
+
+useRevealAnimation('.projects-card', {
+  stagger: 0.18,
+  duration: 0.9,
+})
 </script>
 
 <template>

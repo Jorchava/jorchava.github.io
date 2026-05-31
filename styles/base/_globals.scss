@@ -13,7 +13,10 @@ body {
   margin: 0;
 }
 
-img {
+img,
+svg,
+video,
+canvas {
   max-width: 100%;
   display: block;
 }
@@ -34,24 +37,27 @@ html.menu-open body {
 .section {
   padding-block: clamp(5rem, 10vw, 8rem);
 }
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 99999;
+  padding: 1rem 1.5rem;
+  background: var(--color-secondary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-default);
+  &:focus-visible {
+    top: 1rem;
+    outline: 2px solid var(--color-secondary);
+  }
+}
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 ::selection {
   color: var(--white);
-  background: var(--color-primary);
-}
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  background: var(--color-terciary);
 }

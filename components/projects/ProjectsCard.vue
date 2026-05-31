@@ -10,7 +10,7 @@ defineProps<Props>()
 </script>
 
 <template>
-  <article class="projects-card surface flex reveal">
+  <article class="projects-card surface flex">
     <div class="projects-card__content flex">
       <h3 class="projects-card__title">
         {{ title }}
@@ -20,8 +20,8 @@ defineProps<Props>()
         {{ description }}
       </p>
 
-      <ul class="projects-card__tags">
-        <li v-for="tag in tags" :key="tag" class="projects-card__tag flex">
+      <ul class="projects-card__tags flex">
+        <li v-for="tag in tags" :key="tag" class="projects-card__tag">
           {{ tag }}
         </li>
       </ul>

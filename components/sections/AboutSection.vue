@@ -1,6 +1,6 @@
 <template>
-  <section id="about" class="section about">
-    <AppContainer size="narrow">
+  <section id="about" class="section about" tabindex="-1">
+    <AppContainer narrow>
       <div class="about__content flex reveal">
         <p class="about__eyebrow pixel-font">ABOUT</p>
 

@@ -6,7 +6,6 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-style: normal;
-  font-display: swap;
   font-synthesis: none;
   scroll-behavior: smooth;
   -moz-osx-font-smoothing: grayscale;
@@ -31,9 +30,11 @@ h6 {
   margin-bottom: 1.5rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1;
+  text-wrap: balance;
 }
 
 .section-description {
   max-width: 60ch;
   color: var(--color-text-muted);
+  text-wrap: pretty;
 }

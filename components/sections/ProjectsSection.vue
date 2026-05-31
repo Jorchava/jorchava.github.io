@@ -3,11 +3,11 @@ import { projects } from '~/data/projects/projects'
 </script>
 
 <template>
-  <section id="projects" class="section projects">
+  <section id="projects" class="section projects" tabindex="-1">
     <AppContainer>
       <div class="projects__content flex">
         <div class="projects__header reveal">
-          <p class="projects__eyebrow pixel-font">PROJECTS</p>
+          <p class="section-label pixel-font">PROJECTS</p>
 
           <h2 class="section-title">
             Selected work and interactive experiments.
@@ -31,10 +31,6 @@ import { projects } from '~/data/projects/projects'
   &__content {
     flex-direction: column;
     gap: 4rem;
-  }
-  &__eyebrow {
-    margin-bottom: 1rem;
-    color: var(--color-primary);
   }
   &__header {
     max-width: 720px;

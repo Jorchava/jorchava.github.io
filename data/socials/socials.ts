@@ -5,11 +5,11 @@ export interface SocialLink {
 
 export const socials: SocialLink[] = [
   {
-    label: 'GitHub',
+    label: 'GitHub profile',
     href: 'https://github.com/Jorchava',
   },
   {
-    label: 'LinkedIn',
+    label: 'LinkedIn profile',
     href: 'https://www.linkedin.com/in/jorgechavarriachaves/',
   },
   {
@@ -17,11 +17,11 @@ export const socials: SocialLink[] = [
     href: 'mailto:jorge.chavarria.chaves@gmail.com',
   },
   {
-    label: 'X',
+    label: 'X profile',
     href: 'https://x.com/georgiechava',
   },
   {
-    label: 'Whatsapp',
+    label: 'Whatsapp chat',
     href: 'https://wa.me/+50686996789',
   },
 ]

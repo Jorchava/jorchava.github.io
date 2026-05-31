@@ -4,7 +4,7 @@ export const seoConfig = {
   description:
     'Frontend engineer focused on interactive experiences, scalable UI architecture, game-inspired web systems, and modern web development.',
 
-  url: 'https://jorchava.com',
+  url: 'https://jorchava.github.io',
 
   image: '/images/seo/preview.png',
 

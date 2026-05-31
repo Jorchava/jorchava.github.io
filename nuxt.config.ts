@@ -33,7 +33,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  sitemap: {
-    siteUrl: 'https://jorchava.github.io/',
+  site: {
+    url: 'https://jorchava.github.io',
   },
 })

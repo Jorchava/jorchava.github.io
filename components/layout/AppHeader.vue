@@ -37,11 +37,11 @@ const handleTabTrap = (event: KeyboardEvent) => {
   const lastElement = focusableElements[focusableElements.length - 1]
   if (event.shiftKey && document.activeElement === firstElement) {
     event.preventDefault()
-    lastElement.focus()
+    lastElement?.focus()
   }
   if (!event.shiftKey && document.activeElement === lastElement) {
     event.preventDefault()
-    firstElement.focus()
+    firstElement?.focus()
   }
 }
 

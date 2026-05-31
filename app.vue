@@ -81,6 +81,54 @@ useHead({
       content: 'width=device-width, initial-scale=1',
     },
   ],
+  script: [
+    {
+      innerHTML: `
+(function() {
+  try {
+    const theme = localStorage.getItem('theme');
+
+    if (theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      return;
+    }
+
+    const prefersDark =
+      window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    document.documentElement.setAttribute(
+      'data-theme',
+      prefersDark ? 'dark' : 'light'
+    );
+  } catch {}
+})();
+`,
+      tagPosition: 'head',
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Jorge Chavarria',
+        url: 'https://jorchava.github.io',
+        jobTitle: 'Frontend Developer',
+        sameAs: [
+          'https://github.com/Jorchava',
+          'https://linkedin.com/in/jorgechavarriachaves',
+        ],
+      }),
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Jorchava Portfolio',
+        url: 'https://jorchava.github.io',
+      }),
+    },
+  ],
   link: [
     {
       rel: 'canonical',

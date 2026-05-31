@@ -1,13 +1,5 @@
 export const useTheme = () => {
-  const theme = useState<'dark' | 'light'>('theme', () => {
-    if (import.meta.client) {
-      return document.documentElement.getAttribute('data-theme') === 'light'
-        ? 'light'
-        : 'dark'
-    }
-
-    return 'dark'
-  })
+  const theme = useState<'dark' | 'light'>('theme', () => 'dark')
 
   const applyTheme = (value: 'dark' | 'light') => {
     theme.value = value
@@ -23,18 +15,11 @@ export const useTheme = () => {
   }
 
   onMounted(() => {
-    const storedTheme = localStorage.getItem('theme')
+    const currentTheme = document.documentElement.getAttribute('data-theme')
 
-    if (storedTheme === 'dark' || storedTheme === 'light') {
-      applyTheme(storedTheme)
-      return
+    if (currentTheme === 'dark' || currentTheme === 'light') {
+      theme.value = currentTheme
     }
-
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches
-
-    applyTheme(prefersDark ? 'dark' : 'light')
   })
 
   return {

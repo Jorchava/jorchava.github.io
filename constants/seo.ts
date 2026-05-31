@@ -18,5 +18,6 @@ export const seoConfig = {
     'Web Game Developer',
     'Interactive Experiences',
     'Frontend Engineer',
+    'PixiJS Developer',
   ],
 }

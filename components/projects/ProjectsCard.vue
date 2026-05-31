@@ -4,6 +4,7 @@ interface Props {
   description: string
   tags: string[]
   href: string
+  linkLabel: string
 }
 
 defineProps<Props>()
@@ -27,7 +28,9 @@ defineProps<Props>()
       </ul>
     </div>
 
-    <NuxtLink :to="href" class="projects-card__link"> View Project </NuxtLink>
+    <NuxtLink :to="href" class="projects-card__link">
+      {{ linkLabel }}
+    </NuxtLink>
   </article>
 </template>
 

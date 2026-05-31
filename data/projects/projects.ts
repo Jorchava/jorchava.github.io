@@ -3,28 +3,32 @@ export interface Project {
   description: string
   tags: string[]
   href: string
+  linkLabel: string
 }
 
 export const projects: Project[] = [
   {
-    title: 'Retro Contact World',
+    title: 'ContrAst: The Color Wars',
     description:
-      'Interactive PixiJS-powered contact experience with retro-inspired exploration mechanics.',
-    tags: ['Nuxt', 'PixiJS', 'TypeScript'],
-    href: '/',
+      'Accessibility-focused color contrast analyzer built to help UI and UX developers validate WCAG compliance and explore contrast relationships between colors.',
+    tags: ['CSS', 'HTML', 'JavaScript'],
+    href: 'https://contrastthecolorwars.netlify.app/',
+    linkLabel: 'Live Demo ↗',
   },
   {
     title: 'Portfolio System',
     description:
       'Modern frontend portfolio architecture focused on scalability, accessibility, and performance.',
-    tags: ['Vue', 'SCSS', 'GSAP'],
-    href: '/',
+    tags: ['Vue', 'SCSS', 'Nuxt'],
+    href: 'https://github.com/Jorchava/jorchava.github.io',
+    linkLabel: 'Source Code ↗',
   },
   {
-    title: 'Interactive UI Experiments',
+    title: 'NES Palette Copier',
     description:
-      'Frontend interaction experiments exploring animation systems and immersive interfaces.',
-    tags: ['Frontend', 'Animation', 'UX'],
-    href: '/',
+      'NES Palette Copier is a tool that allows users to easily copy and paste NES color palettes for use in their projects, making it a valuable resource for game developers and designers working with retro aesthetics in the Web.',
+    tags: ['Frontend', 'SCSS', 'UI'],
+    href: 'https://codepen.io/Jorchava/full/NPbwVYJ',
+    linkLabel: 'View on CodePen ↗',
   },
 ]

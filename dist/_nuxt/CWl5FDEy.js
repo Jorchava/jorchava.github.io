@@ -1,0 +1,1 @@
+import{i as a,w as o,f as t,r,B as l}from"./Oyulct9r.js";const s=a({__name:"AppContainer",props:{narrow:{type:Boolean,default:!1},full:{type:Boolean,default:!1}},setup(e){return(n,c)=>(o(),t("div",{class:r(["container",{"container--narrow":e.narrow,"container--full":e.full}])},[l(n.$slots,"default")],2))}}),i=Object.assign(s,{__name:"AppContainer"});export{i as _};

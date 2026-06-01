@@ -11,7 +11,7 @@ defineProps<Props>()
 <template>
   <article class="resume-item reveal">
     <div class="resume-item__timeline flex">
-      <span class="resume-item__dot"></span>
+      <span class="resume-item__dot"/>
     </div>
 
     <div class="resume-item__content">

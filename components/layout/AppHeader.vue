@@ -97,6 +97,7 @@ onBeforeUnmount(() => {
         </nav>
 
         <button
+          ref="menuToggleRef"
           class="app-header__toggle"
           type="button"
           :aria-expanded="isMenuOpen"
@@ -104,20 +105,19 @@ onBeforeUnmount(() => {
           :aria-label="`${isMenuOpen ? 'Close' : 'Open'} navigation menu`"
           aria-haspopup="menu"
           @click="toggleMenu"
-          ref="menuToggleRef"
         >
-          <span></span>
-          <span></span>
+          <span/>
+          <span/>
         </button>
         <Transition name="menu">
           <div v-if="isMenuOpen" class="mobile-menu flex" @click="closeMenu">
             <nav
               id="mobile-navigation"
-              class="mobile-menu__nav flex"
-              @click.stop
-              aria-label="Primary navigation"
               ref="mobileMenuRef"
+              class="mobile-menu__nav flex"
+              aria-label="Primary navigation"
               :aria-hidden="!isMenuOpen"
+              @click.stop
             >
               <a
                 v-for="item in navigationItems"

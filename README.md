@@ -72,18 +72,20 @@ The portfolio itself acts as both:
 - About section
 - Resume/CV section
 - Footer/social links
+- Theme support
+- Reusable design system
 - SEO optimization
 - Performance optimization
 
 ## Phase 2
 
-- PixiJS-powered contact experience
-- Retro top-down mini contact world
-- Character selection
+- PixiJS playground foundation
+- PixiJS contact world
+- Retro top-down mini contact experience
 - Mailbox interaction system
 - Secure message submission API
-- Theme support
-- Reusable design system
+- Automated testing expansion
+- Phase I refinements and polish
 
 ## Phase 3
 
@@ -188,7 +190,11 @@ pnpm preview
 
 # Deployment
 
-Production deployment is handled through Netlify.
+Production deployment is currently handled through GitHub Pages via GitHub Actions CI/CD.
+
+Planned future migration:
+
+- Netlify (Phase II+ evaluation)
 
 GitHub is used for:
 
@@ -224,7 +230,18 @@ GitHub is used for:
 
 # Status
 
-Currently in active development.
+Current Status
+
+Phase I Released (v1.0.0)
+
+Live production site:
+https://jorchava.github.io
+
+Phase II in progress:
+
+- PixiJS Playground
+- PixiJS Contact World
+- Testing Infrastructure
 
 ---
 
@@ -235,13 +252,17 @@ Current foundation work includes:
 - token-based theme system
 - responsive layout system
 - reusable utility classes
-- GSAP integration preparation
-- PixiJS integration planning
+- GSAP integration
+- PixiJS architecture foundation
+- Automated GitHub Actions deployment
+- SEO optimization
+- Accessibility improvements
+- Production release workflow
 
 ---
 
 # Author
 
-Jorge Chavarría (jorchava)
+Jorge Chavarría Chaves (jorchava)
 
 Frontend Engineer & Web Game Developer

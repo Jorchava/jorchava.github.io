@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+section[id] {
+  scroll-margin-top: var(--spacing-xxl);
+}
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+}
+.section {
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 99999;
+  padding: 1rem 1.5rem;
+  background: var(--color-secondary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: top var(--transition-default);
+  &:focus-visible {
+    top: 1rem;
+    outline: 2px solid var(--color-secondary);
+  }
+}
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+::selection {
+  color: var(--white);
+  background: var(--color-terciary);
+}

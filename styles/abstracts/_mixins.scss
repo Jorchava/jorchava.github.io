@@ -1,0 +1,39 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition(
+  $properties: (
+    color,
+    background-color,
+    border-color,
+    transform,
+    opacity,
+  )
+) {
+  transition-property: $properties;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease;
+}
+
+@mixin hover-lift($distance: -4px) {
+  transition:
+    transform var(--transition-default),
+    box-shadow var(--transition-default);
+
+  &:hover {
+    transform: translateY($distance);
+  }
+}
+
+@mixin hover-border {
+  transition:
+    border-color var(--transition-default),
+    transform var(--transition-default);
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+}

@@ -1,0 +1,40 @@
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-synthesis: none;
+  scroll-behavior: smooth;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.pixel-font {
+  font-family: var(--font-pixel);
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.section-description {
+  max-width: 60ch;
+  color: var(--color-text-muted);
+  text-wrap: pretty;
+}

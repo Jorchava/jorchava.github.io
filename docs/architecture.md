@@ -37,7 +37,13 @@ The goal is to maintain:
 
 ## Deployment
 
-- Netlify
+Phase I:
+
+- GitHub Pages
+
+Phase II+:
+
+- Netlify (planned migration)
 
 ---
 
@@ -72,9 +78,9 @@ If the game systems fail or are disabled, the portfolio itself must remain fully
 
 ```txt
 /
-├── assets/
 ├── components/
 ├── composables/
+├── constants/
 ├── data/
 ├── game/
 ├── layouts/
@@ -82,6 +88,7 @@ If the game systems fail or are disabled, the portfolio itself must remain fully
 ├── public/
 ├── server/
 ├── styles/
+├── tests/
 ├── types/
 ├── utils/
 └── docs/
@@ -134,11 +141,10 @@ Convention:
 
 Examples:
 
-- useProjects.ts
-- useAge.ts
 - useTheme.ts
-- useProjects.ts
-- useGsap.ts
+- useSeo.ts
+- useRevealAnimation.ts
+- useActiveSection.ts
 
 ---
 
@@ -407,8 +413,8 @@ camelCase prefixed with `use`
 
 Examples:
 
-- useProjects.ts
 - useTheme.ts
+- useSeo.ts
 
 ## Utilities
 
@@ -517,23 +523,41 @@ Avoid:
 
 ## Source Control
 
-GitHub
+GitHub with Github Actions
+
+1. Merged to main
+2. Actions to push Live in Github Pages
 
 ## Production Hosting
 
-Netlify
+Phase I:
+
+- GitHub Pages
+
+Future:
+
+- Netlify (under evaluation)
 
 ## Workflow
 
 1. Local development
 2. Feature branch
 3. Commit changes
-4. Push to GitHub
-5. Netlify preview deploy
-6. Merge to main
-7. Production deployment
+4. Push feature branch
+5. Open Pull Request into dev
+6. Automated CI validation
+7. Merge into dev
+8. Merge dev into main
+9. Automated GitHub Pages deployment
 
 ---
+
+# Status
+
+## Current status
+
+v1.0.0
+Phase I complete.
 
 # Future Expansion Philosophy
 

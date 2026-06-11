@@ -1,9 +1,11 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ['CI']
+    branches: [main]
+    types:
+      - completed
 
 permissions:
   contents: read
@@ -15,8 +17,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
 
     steps:
       - uses: actions/checkout@v4
@@ -30,23 +35,10 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint
-
-      - run: pnpm exec nuxt typecheck
-
       - run: pnpm generate
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
-  deploy:
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-
-    steps:
       - uses: actions/deploy-pages@v4

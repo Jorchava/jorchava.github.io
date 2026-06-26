@@ -1,3 +1,6 @@
+<script setup lang="ts">
+useSeo()
+</script>
 <template>
   <main>
     <h1>Playground</h1>

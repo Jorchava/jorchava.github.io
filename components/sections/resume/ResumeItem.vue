@@ -57,20 +57,25 @@ defineProps<Props>()
       position: absolute;
       top: 1rem;
       bottom: -4rem;
-      width: 1px;
-      background: var(--color-border);
+      width: 0.125rem;
+      background: linear-gradient(
+        to bottom,
+        var(--color-primary),
+        var(--color-border)
+      );
     }
   }
   &:last-child &__timeline::after {
     display: none;
   }
   &__dot {
-    width: 14px;
-    height: 14px;
+    width: 1rem;
+    height: 1rem;
     margin-top: 0.35rem;
-    border-radius: 999px;
+    border-radius: 50%;
     background: var(--color-primary);
     box-shadow: var(--shadow-primary-glow);
+    z-index: 1;
   }
   &__content {
     padding-bottom: 4rem;

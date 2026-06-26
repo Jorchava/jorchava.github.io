@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxt/eslint', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/eslint', '@nuxtjs/sitemap', '@nuxt/icon', '@nuxt/image'],
 
   css: ['~/styles/main.scss'],
 

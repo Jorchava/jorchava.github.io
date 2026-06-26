@@ -1,11 +1,18 @@
 import { describe, expect, it } from 'vitest'
+import { nextTheme } from '~/utils/theme'
 
-describe('Theme', () => {
-  it('supports dark theme', () => {
-    expect('dark').toBe('dark')
+describe('Theme utility', () => {
+  it('switches dark to light', () => {
+    expect(nextTheme('dark')).toBe('light')
   })
 
-  it('supports light theme', () => {
-    expect('light').toBe('light')
+  it('switches light to dark', () => {
+    expect(nextTheme('light')).toBe('dark')
+  })
+
+  it('always returns a valid theme', () => {
+    const result = nextTheme('dark')
+
+    expect(['dark', 'light']).toContain(result)
   })
 })

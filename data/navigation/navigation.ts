@@ -6,22 +6,22 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   {
     label: 'About',
-    href: '#about',
+    href: '/#about',
   },
   {
     label: 'Projects',
-    href: '#projects',
+    href: '/#projects',
   },
   {
     label: 'Skills',
-    href: '#skills',
+    href: '/#skills',
   },
   {
     label: 'Resume',
-    href: '#resume',
+    href: '/#resume',
   },
   {
     label: 'Contact',
-    href: '#contact',
+    href: '/#contact',
   },
 ]

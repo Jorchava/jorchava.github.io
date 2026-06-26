@@ -49,11 +49,7 @@ onMounted(() => {
         <div class="hero__actions flex">
           <a href="#projects" class="hero__button surface">View Projects</a>
 
-          <a
-            href="#contact"
-            class="hero__button surface hero__button--secondary"
-            >Contact</a
-          >
+          <a href="#contact" class="hero__button surface hero__button--secondary">Contact</a>
         </div>
       </div>
     </AppContainer>
@@ -66,10 +62,12 @@ onMounted(() => {
   background: var(--color-background);
   position: relative;
   overflow: clip;
+
   &__content {
     max-width: var(--content-max-width);
     margin-inline: auto;
   }
+
   &__title {
     font-size: clamp(3rem, 10vw, 7rem);
     margin-bottom: 1.5rem;
@@ -77,16 +75,19 @@ onMounted(() => {
     letter-spacing: -0.04em;
     max-width: 10ch;
   }
+
   &__description {
     max-width: 40ch;
     margin-bottom: 2.5rem;
     font-size: 1.25rem;
     color: var(--color-text-muted);
   }
+
   &__actions {
     flex-wrap: wrap;
     gap: 1rem;
   }
+
   &__button {
     display: inline-flex;
     align-items: center;
@@ -97,18 +98,14 @@ onMounted(() => {
     color: var(--color-text);
     text-decoration: none;
     @include hover-lift;
-    transition:
-      border-color var(--transition-default),
-      transform var(--transition-default),
-      background var(--transition-default);
-    &:hover {
-      border-color: var(--color-primary);
-    }
+    @include hover-border;
+
     &--secondary {
       background: transparent;
     }
   }
 }
+
 @include respond(md) {
   .hero {
     &__actions {

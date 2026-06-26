@@ -1,3 +1,5 @@
+import { nextTheme } from '~/utils/theme'
+
 export const useTheme = () => {
   const theme = useState<'dark' | 'light'>('theme', () => 'dark')
 
@@ -11,7 +13,7 @@ export const useTheme = () => {
   }
 
   const toggleTheme = () => {
-    applyTheme(theme.value === 'dark' ? 'light' : 'dark')
+    applyTheme(nextTheme(theme.value))
   }
 
   onMounted(() => {

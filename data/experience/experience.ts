@@ -8,12 +8,12 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    period: '2015 — Present',
-    title: 'Senior Experience Technology Engineer (XT)',
-    company: 'PGD (Publicis Global Delivery) - Interactive Developer',
+    period: '2015 — 2026',
+    title: 'Senior Interactive Developer',
+    company: 'PGD',
     description:
       'Building modern frontend systems, interactive web experiences, and game-inspired interfaces focused on performance, accessibility, and scalable architecture.',
-    technologies: ['Vue', 'Nuxt', 'TypeScript', 'SCSS', 'GSAP', 'PixiJS'],
+    technologies: ['Vue', 'Nuxt', 'TypeScript', 'SCSS', 'GSAP', 'PixiJS', 'Accessibility', 'Frontent Systems'],
   },
 
   {
@@ -21,8 +21,15 @@ export const experience: ExperienceItem[] = [
     title: 'Frontend Engineering Focus',
     company: 'Accenture',
     description:
-      'Deep focus on frontend architecture, agile projects, maintenance, responsive systems, UI engineering, reusable component design, animation systems, and modern web tooling.',
-    technologies: ['JavaScript', 'Frontend Systems', 'UI Engineering'],
+      'Delivered frontend solutions within enterprise environments, focusing on responsive interfaces, UI implementation, cross-browser compatibility, maintenance of existing platforms, and Agile collaboration across multidisciplinary teams.',
+    technologies: [
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'Responsive Design',
+      'Cross-Browser Support',
+      'Agile'
+    ],
   },
 
   {
@@ -30,7 +37,7 @@ export const experience: ExperienceItem[] = [
     title: 'Web and Game Development Foundations',
     company: 'Independent Learning - INA (Instituto Nacional de Aprendizaje)',
     description:
-      'Built strong foundations in semantic HTML, modern CSS, JavaScript fundamentals, responsive design, and interactive web and video games development.',
+      'Built foundational skills in HTML, CSS, JavaScript, responsive design, accessibility fundamentals, and interactive web development while exploring early game development concepts.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
   },
 ]

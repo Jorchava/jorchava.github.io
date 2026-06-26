@@ -26,22 +26,24 @@ import { socials } from '~/data/socials/socials'
               :key="social.label"
               :href="social.href"
               class="contact-section__link flex"
-              target="_blank"
-              rel="noopener noreferrer"
-              :aria-label="`Open ${social.label} in a new tab`"
+              :aria-label="`Jorchava's ${social.label}`"
             >
               <span>{{ social.label }}</span>
+              
+              <Icon :name="social.icon" />
 
-              <span class="contact-section__arrow" aria-hidden="true">↗</span>
             </a>
           </div>
 
           <a
             href="/jorchavaCV.pdf"
             class="contact-section__resume"
-            target="_blank"
           >
-            Download Resume
+            <span>Download Resume</span>
+            <Icon
+              name="heroicons:arrow-down-tray-20-solid"
+              class="contact-section__resume-icon"
+            />
           </a>
         </div>
       </div>
@@ -118,11 +120,9 @@ import { socials } from '~/data/socials/socials'
     border-radius: var(--radius-md);
     color: var(--color-text);
     text-decoration: none;
-    @include transition;
+    gap: 0.5rem;
     @include hover-border;
-    &:hover {
-      transform: translateY(-2px);
-    }
+    @include hover-lift;
   }
 }
 @include respond(xl) {

@@ -18,21 +18,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - uses: pnpm/action-setup@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+
         with:
-          node-version: 22
-          cache: pnpm
+          node-version-file: .nvmrc
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - run: pnpm lint
+      - name: Lint
+        run: pnpm lint
 
-      - run: pnpm typecheck
+      - name: Type check
+        run: pnpm typecheck
 
-      - run: pnpm test
+      - name: Tests
+        run: pnpm test
 
-      - run: pnpm generate
+      - name: Build
+        run: pnpm build
+
+      - name: Generate Static site
+        run: pnpm generate
